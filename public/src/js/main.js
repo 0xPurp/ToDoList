@@ -7,7 +7,7 @@ let divTitre = document.createElement('div');
 let divContenu = document.createElement('div');
 section.append(divTitre, divContenu);
 let h1 = document.createElement('h1');
-h1.innerHTML = "Tido List";
+h1.innerHTML = "To Do List";
 divTitre.append(h1);
 let divc;
 var divsC;
@@ -202,7 +202,73 @@ boutonAjout.addEventListener('click', function(){
             });
         });
         // ./Sauvegarder
-};
+
+        // Supprimer la tache
+        iconDelete.addEventListener('click', function(){
+            spanTache.style.display = "none";
+            iconImportant.style.display = "none";
+            iconCheck.style.display = "none";
+            iconEdit.style.display = "none";
+            iconDelete.style.display = "none";
+            let spanTache2 = document.createElement('span');
+            spanTache2.innerHTML = "Êtes-vous sûr de vouloir supprimer cette tâche ?";
+            spanTache2.style.color = "red";
+            divSpan.append(spanTache2);
+            let boutonOUI = document.createElement('button');
+            boutonOUI.innerHTML = "OUI";
+            boutonOUI.style.backgroundColor = "green";
+            boutonOUI.style.color = "white";
+            boutonOUI.style.marginRight = "5px";
+            boutonOUI.style.borderRadius = "5px";
+            boutonOUI.style.border = "none";
+            let boutonNON = document.createElement('button');
+            boutonNON.innerHTML = "NON";
+            boutonNON.style.backgroundColor = "red";
+            boutonNON.style.color = "white";
+            boutonNON.style.marginRight = "5px";
+            boutonNON.style.borderRadius = "5px";
+            boutonNON.style.border = "none";
+            divIcon.append(boutonOUI, boutonNON);
+
+            boutonOUI.addEventListener('click', function(){
+                divsC[2].removeChild(divTache);
+            });
+            boutonNON.addEventListener('click', function(){
+                iconImportant.style.display = "inline-block";
+                iconCheck.style.display = "inline-block";
+                iconEdit.style.display = "inline-block";
+                iconDelete.style.display = "inline-block";
+                boutonOUI.style.display = "none";
+                boutonNON.style.display = "none";
+                spanTache.style.display = "block";
+                spanTache2.style.display = "none";
+            });
+        });
+        // ./Supprimer
+        
+        let tacheAll = divsC[2].querySelectorAll('.divTache');
+
+        for (let i = 0; i < tacheAll.length; i++) {
+            boutonsC2[0].addEventListener('click', function(){
+                if (tacheAll[i].style.backgroundColor != "green") {
+                    tacheAll[i].style.display = "flex";
+                } else {
+                    tacheAll[i].style.display = "none";
+                };
+            });
+            boutonsC2[1].addEventListener('click', function(){
+                if (tacheAll[i].style.backgroundColor != "green") {
+                    tacheAll[i].style.display = "none";
+                } else {
+                    tacheAll[i].style.display = "flex";
+                };
+            });
+            boutonsC2[2].addEventListener('click', function () {
+                tacheAll[i].style.display = 'flex'
+            });
+        };
+    };
+});
 
 body.addEventListener('keydown', function(e){
     if (e.keyCode === 13){
