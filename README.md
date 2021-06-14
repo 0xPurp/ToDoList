@@ -27,6 +27,6 @@
 - pour le mode "edit", faites en sorte de pouvoir modifier en double cliquant sur le nom de la tâche
 - pour le mode "delete", faites en sorte de demander une confirmation avant de supprimer
 - Rajoutez un mode "sombre" pour le design. (comme sur facebook)
-- faire un "drap and drog" sur les tâches. (voir sur internet)
+- faire un "drap and drop" sur les tâches. (voir sur internet)
 
 
