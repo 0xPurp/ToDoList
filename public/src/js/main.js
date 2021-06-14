@@ -18,7 +18,7 @@ for (let i = 0; i < 3; i++) {
 };
 // ./structure
 
-    // div 1 
+// div 1 
 let div1Label = document.createElement('label');
 div1Label.innerHTML = "Ajouter une tâche :";
 
@@ -31,25 +31,25 @@ boutonAjout.innerHTML = "Ajouter";
 let darkmode = document.createElement('i');
 darkmode.setAttribute('class', "fas fa-moon");
 
-darkmode.addEventListener('click', function(){
-    if (body.style.backgroundColor == "black"){
+darkmode.addEventListener('click', function () {
+    if (body.style.backgroundColor == "black") {
         body.style.backgroundColor = "Linen";
-    } else{
+    } else {
         body.style.backgroundColor = "black";
     }
 })
 
 divsC[0].append(div1Label, br, div1Input, boutonAjout, darkmode);
-    // ./div 1
+// ./div 1
 
-    // div 2 
+// div 2 
 let bouton;
 let boutonsC2;
 for (let i = 0; i < 3; i++) {
     bouton = document.createElement('button');
     divsC[1].append(bouton);
     boutonsC2 = divsC[1].querySelectorAll('button');
-    switch(i){
+    switch (i) {
         case 0:
             boutonsC2[0].innerHTML = "À faire";
             break;
@@ -63,33 +63,33 @@ for (let i = 0; i < 3; i++) {
 };
 // ./div2
 
-    // div 3 
-    body.style.padding = "1%";
-    body.style.margin = "0%";
-    body.style.backgroundColor = "Linen";
-    section.style.margin = "0% 10%";
-    divTitre.style.background = "url('https://wallpapercave.com/wp/wp2742875.jpg')"
-    divTitre.style.padding = "0.5% 1%";
-    divTitre.style.marginBottom = "2%";
-    divTitre.style.borderRadius = "5px";
-    h1.style.color = "cyan";
-    h1.style.fontWeight = "bold";
-    h1.style.fontFamily = "Impact";
-    h1.style.textAlign = "center";
-    h1.style.fontSize = "36px"
-    divContenu.style.backgroundColor = "white";
-    divContenu.style.borderRadius = "5px";
-    divContenu.style.padding = "2%";
-    divContenu.style.borderTop = "5px solid purple";
-    divsC[0].style.borderBottom = "solid 3px Linen";
-    divsC[0].style.paddingBottom = "2%";
-    div1Input.style.border = "2px solid Linen";
-    div1Input.style.borderRadius = "5px";
-    divsC[1].style.display = "flex";
-    divsC[1].style.justifyContent = "flex-end";
-    divsC[1].style.padding = "2% 0%";
-    divsC[2].style.padding = "1% 0%"
-    // ./div 3
+// div 3 
+body.style.padding = "1%";
+body.style.margin = "0%";
+body.style.backgroundColor = "Linen";
+section.style.margin = "0% 10%";
+divTitre.style.background = "url('https://wallpapercave.com/wp/wp2742875.jpg')"
+divTitre.style.padding = "0.5% 1%";
+divTitre.style.marginBottom = "2%";
+divTitre.style.borderRadius = "5px";
+h1.style.color = "cyan";
+h1.style.fontWeight = "bold";
+h1.style.fontFamily = "Impact";
+h1.style.textAlign = "center";
+h1.style.fontSize = "36px"
+divContenu.style.backgroundColor = "white";
+divContenu.style.borderRadius = "5px";
+divContenu.style.padding = "2%";
+divContenu.style.borderTop = "5px solid purple";
+divsC[0].style.borderBottom = "solid 3px Linen";
+divsC[0].style.paddingBottom = "2%";
+div1Input.style.border = "2px solid Linen";
+div1Input.style.borderRadius = "5px";
+divsC[1].style.display = "flex";
+divsC[1].style.justifyContent = "flex-end";
+divsC[1].style.padding = "2% 0%";
+divsC[2].style.padding = "1% 0%"
+// ./div 3
 // boutons
 let allBoutons = document.querySelectorAll('button');
 for (let i = 0; i < allBoutons.length; i++) {
@@ -103,8 +103,8 @@ for (let i = 0; i < allBoutons.length; i++) {
 div1Input.focus();
 
 // Bouton ajouter
-boutonAjout.addEventListener('click', function(){
-    if (div1Input.value != ""){
+boutonAjout.addEventListener('click', function () {
+    if (div1Input.value != "") {
 
         let divTache = document.createElement('div');
         divTache.setAttribute('class', "divTache");
@@ -120,9 +120,9 @@ boutonAjout.addEventListener('click', function(){
         spanTache.innerHTML = div1Input.value;
         divSpan.style.width = "75%"
         divSpan.append(spanTache);
-// ./bouton ajouter
+        // ./bouton ajouter
 
-            // Icons
+        // Icons
         let divIcon = document.createElement('div');
         let iconImportant = document.createElement('i');
         iconImportant.setAttribute('class', "fas fa-exclamation");
@@ -140,14 +140,14 @@ boutonAjout.addEventListener('click', function(){
         iconDelete.style.marginRight = "25px";
         iconDelete.style.color = "red";
         iconDelete.setAttribute('id', "iconDel");
-        divIcon.append(iconImportant,iconCheck, iconEdit, iconDelete);
+        divIcon.append(iconImportant, iconCheck, iconEdit, iconDelete);
         divTache.style.display = "flex";
         divTache.style.justifyContent = "space-between";
         let icons = divIcon.querySelectorAll('i');
         divTache.append(divSpan, divIcon)
         div1Input.value = "";
-        
-        iconImportant.addEventListener('click', function(){
+
+        iconImportant.addEventListener('click', function () {
             divsC[2].prepend(divTache);
             iconImportant.style.display = "none"
             let iconDanger = document.createElement('i');
@@ -156,7 +156,7 @@ boutonAjout.addEventListener('click', function(){
             iconDanger.style.marginRight = "25px";
             divIcon.prepend(iconDanger);
 
-            iconDanger.addEventListener('click', function(){
+            iconDanger.addEventListener('click', function () {
                 iconImportant.style.display = "inline-block";
                 iconDanger.style.display = "none"
                 divsC[2].append(divTache);
@@ -165,17 +165,17 @@ boutonAjout.addEventListener('click', function(){
         // ./Icons
 
         // Valider la tache
-        iconCheck.addEventListener('click', function(){
-            if(divTache.style.backgroundColor == "green"){
+        iconCheck.addEventListener('click', function () {
+            if (divTache.style.backgroundColor == "green") {
                 divTache.style.backgroundColor = "Gainsboro";
             } else {
                 divTache.style.backgroundColor = "green";
             }
         });
         // ./Valider
-    
+
         // Modifier la tache
-        iconEdit.addEventListener('click', function(){
+        iconEdit.addEventListener('click', function () {
             spanTache.style.display = "none";
             iconImportant.style.display = "none";
             iconCheck.style.display = "none";
@@ -189,11 +189,11 @@ boutonAjout.addEventListener('click', function(){
             let inputEdit = document.createElement('input');
             divSpan.append(inputEdit);
             inputEdit.focus();
-        // ./Modifier
+            // ./Modifier
 
 
             // Sauvegarder
-            iconSave.addEventListener('click', function(){
+            iconSave.addEventListener('click', function () {
                 inputEditValue = inputEdit.value;
                 inputEdit.style.display = "none";
                 spanTache.innerHTML = inputEditValue;
@@ -206,9 +206,9 @@ boutonAjout.addEventListener('click', function(){
             });
 
             // Sauvegarder avec la touche ENTER
-            body.addEventListener('keydown', function(e){
+            body.addEventListener('keydown', function (e) {
                 if (e.keyCode === 13) {
-                    if (inputEdit.value != ""){
+                    if (inputEdit.value != "") {
                         iconSave.click();
                     };
                 };
@@ -217,7 +217,7 @@ boutonAjout.addEventListener('click', function(){
         // ./Sauvegarder
 
         // Supprimer la tache
-        iconDelete.addEventListener('click', function(){
+        iconDelete.addEventListener('click', function () {
             spanTache.style.display = "none";
             iconImportant.style.display = "none";
             iconCheck.style.display = "none";
@@ -243,10 +243,10 @@ boutonAjout.addEventListener('click', function(){
             boutonNON.style.border = "none";
             divIcon.append(boutonOUI, boutonNON);
 
-            boutonOUI.addEventListener('click', function(){
+            boutonOUI.addEventListener('click', function () {
                 divsC[2].removeChild(divTache);
             });
-            boutonNON.addEventListener('click', function(){
+            boutonNON.addEventListener('click', function () {
                 iconImportant.style.display = "inline-block";
                 iconCheck.style.display = "inline-block";
                 iconEdit.style.display = "inline-block";
@@ -258,18 +258,18 @@ boutonAjout.addEventListener('click', function(){
             });
         });
         // ./Supprimer
-        
+
         let tacheAll = divsC[2].querySelectorAll('.divTache');
 
         for (let i = 0; i < tacheAll.length; i++) {
-            boutonsC2[0].addEventListener('click', function(){
+            boutonsC2[0].addEventListener('click', function () {
                 if (tacheAll[i].style.backgroundColor != "green") {
                     tacheAll[i].style.display = "flex";
                 } else {
                     tacheAll[i].style.display = "none";
                 };
             });
-            boutonsC2[1].addEventListener('click', function(){
+            boutonsC2[1].addEventListener('click', function () {
                 if (tacheAll[i].style.backgroundColor != "green") {
                     tacheAll[i].style.display = "none";
                 } else {
@@ -283,9 +283,9 @@ boutonAjout.addEventListener('click', function(){
     };
 });
 
-body.addEventListener('keydown', function(e){
-    if (e.keyCode === 13){
-        if (div1Input.value != ""){
+body.addEventListener('keydown', function (e) {
+    if (e.keyCode === 13) {
+        if (div1Input.value != "") {
             boutonAjout.click()
         };
     };
