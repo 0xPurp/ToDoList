@@ -28,7 +28,18 @@ div1Input.value = "";
 let boutonAjout = document.createElement('button');
 boutonAjout.innerHTML = "Ajouter";
 
-divsC[0].append(div1Label, br, div1Input, boutonAjout);
+let darkmode = document.createElement('i');
+darkmode.setAttribute('class', "fas fa-moon");
+
+darkmode.addEventListener('click', function(){
+    if (body.style.backgroundColor == "black"){
+        body.style.backgroundColor = "Linen";
+    } else{
+        body.style.backgroundColor = "black";
+    }
+})
+
+divsC[0].append(div1Label, br, div1Input, boutonAjout, darkmode);
     // ./div 1
 
     // div 2 
@@ -57,13 +68,15 @@ for (let i = 0; i < 3; i++) {
     body.style.margin = "0%";
     body.style.backgroundColor = "Linen";
     section.style.margin = "0% 10%";
-    divTitre.style.backgroundColor = "purple";
+    divTitre.style.background = "url('https://wallpapercave.com/wp/wp2742875.jpg')"
     divTitre.style.padding = "0.5% 1%";
     divTitre.style.marginBottom = "2%";
     divTitre.style.borderRadius = "5px";
     h1.style.color = "cyan";
     h1.style.fontWeight = "bold";
-    h1.style.fontFamily = "Impact"
+    h1.style.fontFamily = "Impact";
+    h1.style.textAlign = "center";
+    h1.style.fontSize = "36px"
     divContenu.style.backgroundColor = "white";
     divContenu.style.borderRadius = "5px";
     divContenu.style.padding = "2%";
